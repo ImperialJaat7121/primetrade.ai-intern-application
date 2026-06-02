@@ -63,7 +63,7 @@ The dataset schema is documented in `data/schema/schema.yaml`.
   "rows_processed": 10000,
   "metric": "signal_rate",
   "value": 0.4991,
-  "latency_ms": 56,
+  "latency_ms": 26,
   "seed": 42,
   "status": "success"
 }
