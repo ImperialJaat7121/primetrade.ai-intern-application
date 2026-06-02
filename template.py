@@ -8,6 +8,7 @@ list_of_files = [
     "Dockerfile",
     "config.yaml",
     "run.py",
+    ".env"
     "main.py",
     "data/data.csv",
     "templates/index.html",
