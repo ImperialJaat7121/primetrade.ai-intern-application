@@ -1,3 +1,23 @@
+from pathlib import Path
+import logging
+
+
+def configure_logger(log_file_path: str | Path) -> logging.Logger:
+    logger = logging.getLogger("mlops_batch_job")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False
+
+    if logger.handlers:
+        return logger
+
+    log_path = Path(log_file_path)
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+
+    formatter = logging.Formatter("[%(asctime)s] %(levelname)s %(name)s - %(message)s")
+    file_handler = logging.FileHandler(log_path, mode="w", encoding="utf-8")
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    return logger
 import logging
 import os
 from datetime import datetime

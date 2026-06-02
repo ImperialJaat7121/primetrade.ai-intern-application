@@ -1,4 +1,5 @@
 pandas
 numpy
-dotenv
+python-dotenv
+PyYAML
 # -e .

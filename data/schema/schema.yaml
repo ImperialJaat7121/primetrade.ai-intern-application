@@ -1,0 +1,26 @@
+dataset: ohlcv_prices
+version: v1
+description: Schema for the OHLCV input file used by the batch job.
+target_column: close
+columns:
+  timestamp:
+    type: datetime
+    required: true
+  open:
+    type: number
+    required: true
+  high:
+    type: number
+    required: true
+  low:
+    type: number
+    required: true
+  close:
+    type: number
+    required: true
+  volume_btc:
+    type: number
+    required: true
+  volume_usd:
+    type: number
+    required: true

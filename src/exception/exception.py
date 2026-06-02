@@ -2,7 +2,7 @@ import sys
 from src.logging import logger
 
 from src import logging
-class NetworkSecurityException(Exception):
+class AppException(Exception):
     def __init__(self, error_message, error_detail: sys):
         self.message = error_message
         _, _, exc_tb = error_detail.exc_info()

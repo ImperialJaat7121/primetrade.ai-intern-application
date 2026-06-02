@@ -8,9 +8,10 @@ list_of_files = [
     "Dockerfile",
     "config.yaml",
     "run.py",
-    ".env"
+    ".env",
     "main.py",
-    "data/data.csv",
+    "data/raw/data.csv",
+    "data/schema/schema.yaml",
     "templates/index.html",
     "notebooks/exploration.ipynb",
     "src/__init__.py",

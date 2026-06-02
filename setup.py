@@ -1,26 +1,28 @@
-from setuptools import setup, find_packages
+from pathlib import Path
 from typing import List
-import os
+
+from setuptools import find_packages, setup
+
 
 def get_requirements(file_path: str) -> List[str]:
-    requirement_lst:List[str] = []
+    requirements: List[str] = []
+    requirements_path = Path(__file__).resolve().parent / file_path
     try:
-        with open("requirements.txt", "r") as file:
-            lines = file.readlines()
-            for line in lines:
+        with requirements_path.open("r", encoding="utf-8") as file:
+            for line in file:
                 requirement = line.strip()
-                #ignore empty lines and -e.
                 if requirement and requirement != "-e .":
-                    requirement_lst.append(requirement)
+                    requirements.append(requirement)
     except FileNotFoundError:
-        print(f"Error: {file_path} not found.")
-    return requirement_lst
+        print(f"Error: {requirements_path} not found.")
+    return requirements
+
 
 setup(
-    name = "mlops_project",
-    version = "0.0.1",
-    author = "Imperialjaat7121",
-    author_email = "chaudharykartik7121@gmail.com",
-    packages = find_packages(),
-    install_requires = get_requirements("requirements.txt")
+    name="mlops_project",
+    version="0.0.1",
+    author="Imperialjaat7121",
+    author_email="chaudharykartik7121@gmail.com",
+    packages=find_packages(),
+    install_requires=get_requirements("requirements.txt"),
 )
